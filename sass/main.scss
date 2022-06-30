@@ -1,0 +1,22 @@
+// Utils
+@import './utils/vars';
+@import './utils/visually-hidden';
+
+// base styles
+@import './base/reset';
+@import './base/common';
+
+// components
+@import './components/container';
+
+// layuots
+@import './layouts/header';
+@import './layouts/hero';
+@import './layouts/specifics';
+@import './layouts/function';
+@import './layouts/team';
+@import './layouts/customers';
+@import './layouts/buttons';
+@import './layouts/gallery';
+@import './layouts/footer';
+@import './layouts/modal-window';
