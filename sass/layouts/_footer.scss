@@ -4,12 +4,31 @@
   padding-bottom: 60px;
 }
 .footer .container {
-  display: flex;
-  align-items: baseline;
+  @include mobile {
+    text-align: center;
+  }
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @include desktop {
+    display: flex;
+    align-items: baseline;
+    text-align: left;
+  }
 }
 
 .logo {
-  margin-right: 70px;
+  margin-bottom: 60px;
+
+  @include tablet {
+    margin-right: 165px;
+  }
+
+  @include desktop {
+    margin-right: 70px;
+  }
 }
 .logo__footer {
   display: inline-block;
@@ -17,10 +36,15 @@
 
   font-family: Raleway, sans-serif;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 24px;
+  line-height: 1.17;
+
   &:hover {
     color: var(--accent-color);
+  }
+  @include desktop {
+    font-size: 26px;
+    line-height: 1.19;
   }
 }
 
@@ -38,7 +62,10 @@
   line-height: 1.71;
 }
 .address-list__item {
-  margin-bottom: 9px;
+  margin-bottom: 8px;
+  @include desktop {
+    margin-bottom: 9px;
+  }
 }
 .address-list__link {
   color: var(--white-text-color);
@@ -77,6 +104,8 @@
 
 .soc-networks {
   display: block;
+  justify-content: center;
+  margin-bottom: 60px;
 }
 .soc-networks__title,
 .signup-form__title {
@@ -91,7 +120,12 @@
 }
 .soc-list {
   display: flex;
+  justify-content: center;
   margin: 0 auto;
+  @include desktop {
+    display: flex;
+    margin: 0 auto;
+  }
 }
 .soc-list__item {
   width: 44px;
@@ -129,11 +163,18 @@
 }
 
 .signup-form {
-  margin-left: auto;
+  @include desktop {
+    margin-left: auto;
+  }
 }
 .signup {
-  display: flex;
-  align-items: baseline;
+  display: block;
+  text-align: center;
+
+  @include desktop {
+    display: flex;
+    align-items: baseline;
+  }
 }
 .signup__email {
   min-width: 358px;
@@ -144,6 +185,7 @@
   padding-left: 16px;
   margin-right: 12px;
   outline: none;
+  margin-bottom: 20px;
 
   background-color: transparent;
   font-size: 16px;
@@ -162,7 +204,10 @@
 }
 
 .signup__btn {
-  display: flex;
+  @include desktop {
+    display: flex;
+  }
+
   align-items: center;
   justify-content: center;
   padding: 0;
