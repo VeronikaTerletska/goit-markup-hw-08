@@ -1,14 +1,32 @@
 .specifics {
-  padding-top: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include tablet {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @include desktop {
+    padding-top: 94px;
+  }
 }
 .specifics-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 .specifics-list__item {
-  width: 270px;
-  & + & {
-    margin-left: var(--card-set-gap);
+  width: 450px;
+  @include tablet {
+    width: 354px;
+    width: calc((100% - 30px) / 2);
   }
+  @include desktop {
+    width: 270px;
+    width: calc((100% - 90px) / 4);
+  }
+  // & + & {
+  //   margin-left: var(--card-set-gap);
+  // }
   &::before {
     content: '';
     height: 120px;
