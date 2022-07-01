@@ -1,14 +1,34 @@
 .customers {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include tablet {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @include desktop {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .customers-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
-.customers-list__item + .customers-list__item {
-  margin-left: var(--card-set-gap);
+.customers-list__item {
+  width: calc((100% - 30px) / 2);
+
+  @include tablet {
+    width: calc((100% - 60px) / 3);
+  }
+  @include desktop {
+    width: calc((100% - 150px) / 6);
+  }
 }
+// .customers-list__item + .customers-list__item {
+//   margin-left: var(--card-set-gap);
+// }
 
 .customers-list__link {
   display: flex;
