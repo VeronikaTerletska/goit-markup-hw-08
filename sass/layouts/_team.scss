@@ -1,26 +1,63 @@
 .team {
   background-color: #f5f4fa;
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include tablet {
+    background-color: #f5f4fa;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @include desktop {
+    background-color: #f5f4fa;
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .team-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .team-list__item {
+  width: 450px;
   background-color: var(--primary-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-  & + & {
-    margin-left: var(--card-set-gap);
+  @include tablet {
+    width: 354px;
+    width: calc((100% - 30px) / 2);
+    background-color: var(--primary-background-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
   }
+  @include desktop {
+    width: 270px;
+    width: calc((100% - 90px) / 4);
+    background-color: var(--primary-background-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+  }
+  // & + & {
+  //   margin-left: var(--card-set-gap);
+  // }
 }
 
 .data-team {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 24px;
+  @include tablet {
+    padding-top: 30px;
+    padding-bottom: 24px;
+  }
+  @include desktop {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
 .data-team__title {
