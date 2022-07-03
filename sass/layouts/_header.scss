@@ -5,6 +5,16 @@
 .main-nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
+  @include desktop {
+    display: flex;
+    align-items: center;
+  }
 }
 .main-nav__logo {
   font-weight: 700;
@@ -12,6 +22,14 @@
   font-size: 24px;
   line-height: 1.17;
   color: var(--primary-text-color);
+
+  @include tablet {
+    font-weight: 700;
+    font-family: Raleway, sans-serif;
+    font-size: 24px;
+    line-height: 1.17;
+    color: var(--primary-text-color);
+  }
 
   @include desktop {
     font-weight: 700;
@@ -27,12 +45,7 @@
 }
 .site-nav {
   display: none;
-  // display: flex;
-  // margin-left: 93px;
 
-  // font-weight: 500;
-  // line-height: 1.14;
-  // letter-spacing: 0.02em;
   @include tablet {
     display: flex;
     margin-left: 88px;
@@ -85,16 +98,10 @@
 
 .contacts {
   display: none;
-  // display: flex;
-  // margin-left: auto;
 
-  // font-weight: 500;
-  // line-height: 1.14;
-  // letter-spacing: 0.02em;
   @include tablet {
     display: flex;
-    // flex-direction: column;
-    margin-left: auto;
+    flex-direction: column;
 
     font-weight: 500;
     line-height: 1.14;
@@ -110,12 +117,22 @@
   }
 }
 .contacts__item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  & + & {
-    margin-left: 50px;
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  @include desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & + & {
+      margin-left: 50px;
+    }
+  }
+}
+.contacts__item:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .contacts__link {
@@ -158,4 +175,149 @@
   &:focus {
     fill: var(--accent-color);
   }
+}
+.mobmenu-btn-open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 15px;
+
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: none;
+  }
+}
+.mobmenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: var(--primary-background-color);
+  width: 100vw;
+  height: 100vw;
+  padding-top: 10px;
+  padding-bottom: 48px;
+  .mob-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+
+.mobmenu-btn-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 15px;
+
+  background-color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  transition-property: fill, border-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+}
+.mobmenu-nav {
+  margin-left: 40px;
+  margin-bottom: 30px;
+
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+}
+.mobmenu-nav__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+.mobmenu-nav__link {
+  transition-property: color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+  &--current {
+    color: var(--accent-color);
+  }
+}
+.mobmenu-contacts {
+  margin-left: 40px;
+  margin-bottom: 64px;
+}
+
+.mobmenu-contacts__tel {
+  margin-bottom: 32px;
+
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+
+  color: var(--accent-color);
+}
+.mobmenu-contacts__mail {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+
+  color: var(--text-color);
+
+  transition-property: color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+.mob-soc {
+  display: flex;
+  margin-left: 40px;
+}
+.mob-soc__item:not(:last-child) {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mob-soc__link {
+  display: block;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--accent-color);
 }
