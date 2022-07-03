@@ -19,6 +19,7 @@
 }
 .card-set__item {
   width: 450px;
+  height: 100%;
 
   @include tablet {
     width: 354px;
@@ -32,11 +33,15 @@
 }
 
 .card-set__link {
-  display: block;
-  &:hover,
-  &:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-      1px 4px 6px rgba(0, 0, 0, 0.16);
+  display: flex;
+  flex-direction: column;
+  @include desktop {
+    display: block;
+    &:hover,
+    &:focus {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
   }
 }
 
@@ -70,6 +75,7 @@
 }
 
 .data-gallery {
+  flex-grow: 1;
   border: 1px solid #eeeeee;
   border-top: none;
   padding: 20px 24px 20px 24px;
