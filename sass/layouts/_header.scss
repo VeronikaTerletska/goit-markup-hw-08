@@ -6,7 +6,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 60px;
+  @include mobile {
+    min-height: 60px;
+  }
+
   @include tablet {
     display: flex;
     align-items: center;
@@ -98,10 +101,12 @@
 
 .contacts {
   display: none;
+  @media screen and (max-width: 1199px) {
+    flex-direction: column;
+  }
 
   @include tablet {
     display: flex;
-    flex-direction: column;
 
     font-weight: 500;
     line-height: 1.14;
@@ -120,7 +125,11 @@
   @include tablet {
     display: flex;
     align-items: center;
-    justify-content: center;
+    &:not(:last-child) {
+      @media screen and (max-width: 1199px) {
+        margin-bottom: 10px;
+      }
+    }
   }
   @include desktop {
     display: flex;
@@ -131,15 +140,8 @@
     }
   }
 }
-.contacts__item:not(:last-child) {
-  margin-bottom: 10px;
-}
 
 .contacts__link {
-  @include tablet {
-    // padding-top: 21px;
-    // padding-bottom: 21px;
-  }
   @include desktop {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -177,11 +179,10 @@
   }
 }
 .mobmenu-btn-open {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   padding: 0;
-  margin-bottom: 15px;
 
   border: none;
   background-color: transparent;
