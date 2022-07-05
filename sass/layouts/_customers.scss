@@ -14,21 +14,21 @@
 .customers-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+
+  @include desktop {
+    margin: -15px;
+  }
 }
 .customers-list__item {
-  width: calc((100% - 30px) / 2);
-
-  @include tablet {
-    width: calc((100% - 60px) / 3);
+  margin: 15px;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    flex-basis: calc(100% / 2 - var(--card-set-gap));
   }
-  @include desktop {
-    width: calc((100% - 150px) / 6);
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    flex-basis: calc(100% / 3 - var(--card-set-gap));
   }
 }
-// .customers-list__item + .customers-list__item {
-//   margin-left: var(--card-set-gap);
-// }
 
 .customers-list__link {
   display: flex;
