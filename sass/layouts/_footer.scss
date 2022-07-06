@@ -7,6 +7,7 @@
   @media screen and (max-width: 767px) {
     text-align: center;
   }
+
   @include tablet {
     display: flex;
     flex-wrap: wrap;
@@ -164,12 +165,21 @@
 
 .signup-form {
   @include desktop {
+    display: flex;
+    align-items: baseline;
     margin-left: auto;
   }
 }
 .signup {
   display: block;
   text-align: center;
+
+  @include tablet {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
 
   @include desktop {
     display: flex;
