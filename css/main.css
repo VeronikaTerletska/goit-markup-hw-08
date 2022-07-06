@@ -74,7 +74,6 @@ body {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-  /* border: 1px solid red; */
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -100,11 +99,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-@media screen and (min-width: 480px) {
-  .main-nav {
-    min-height: 60px;
-  }
+  min-height: 60px;
 }
 @media screen and (min-width: 768px) {
   .main-nav {
@@ -438,7 +433,7 @@ body {
   .hero {
     padding-top: 118px;
     padding-bottom: 118px;
-    max-width: 480px;
+    width: 480px;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -631,25 +626,46 @@ body {
   }
 }
 
-.specifics-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+@media screen and (min-width: 768px) {
+  .specifics-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .specifics-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .specifics-list__item {
   width: 450px;
 }
+@media screen and (max-width: 767px) {
+  .specifics-list__item:not(:last-child) {
+    margin-bottom: var(--card-set-gap);
+  }
+}
 @media screen and (min-width: 768px) {
   .specifics-list__item {
     width: 354px;
-    width: calc((100% - 30px) / 2);
+    flex-basis: calc(50% - var(--card-set-gap));
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 1199px) {
+  .specifics-list__item {
+    margin: 15px;
   }
 }
 @media screen and (min-width: 1200px) {
   .specifics-list__item {
     width: 270px;
-    width: calc((100% - 90px) / 4);
+    flex-basis: calc(25% - var(--card-set-gap));
+  }
+  .specifics-list__item + .specifics-list__item {
+    margin-left: var(--card-set-gap);
   }
 }
 .specifics-list__item::before {
@@ -822,6 +838,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .team-list__item {
+    width: 270px;
     flex-basis: calc(25% - var(--card-set-gap));
     background-color: var(--primary-background-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -921,6 +938,7 @@ body {
 .customers-list {
   display: flex;
   flex-wrap: wrap;
+  margin: -15px;
 }
 @media screen and (min-width: 1200px) {
   .customers-list {
@@ -939,6 +957,7 @@ body {
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .customers-list__item {
     flex-basis: calc(33.3333333333% - var(--card-set-gap));
+    justify-content: center;
   }
 }
 
@@ -946,7 +965,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
+  width: 210px;
   height: 92px;
   color: var(--icons-color);
   border: 1px solid var(--icons-color);
@@ -959,6 +978,41 @@ body {
   border-color: var(--accent-color);
   color: var(--accent-color);
 }
+@media screen and (min-width: 768px) {
+  .customers-list__link {
+    width: 226px;
+    height: 92px;
+    color: var(--icons-color);
+    border: 1px solid var(--icons-color);
+    border-radius: 4px;
+    transition-property: border-color, color;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--timing-function);
+  }
+  .customers-list__link:hover, .customers-list__link:focus {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .customers-list__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+    color: var(--icons-color);
+    border: 1px solid var(--icons-color);
+    border-radius: 4px;
+    transition-property: border-color, color;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--timing-function);
+  }
+  .customers-list__link:hover, .customers-list__link:focus {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
+}
 
 .customers-list__icon {
   fill: currentColor;
@@ -970,7 +1024,7 @@ body {
 .bottons-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px 8px;
+  margin: -4px;
   margin-bottom: 40px;
   background-color: var(--primary-background-color);
 }
@@ -989,14 +1043,17 @@ body {
   }
 }
 
+.bottons-list__item {
+  margin: 4px;
+}
 @media screen and (min-width: 768px) {
-  .bottons-list__item + .bottons-list__item {
-    margin-left: 8px;
+  .bottons-list__item:not(:last-child) {
+    margin-right: 8px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .bottons-list__item + .bottons-list__item {
-    margin-left: 8px;
+  .bottons-list__item:not(:last-child) {
+    margin-right: 8px;
   }
 }
 
@@ -1179,7 +1236,6 @@ body {
   .footer .container {
     display: flex;
     align-items: baseline;
-    text-align: left;
   }
 }
 
@@ -1275,6 +1331,11 @@ body {
   justify-content: center;
   margin-bottom: 60px;
 }
+@media screen and (min-width: 1200px) {
+  .soc-networks {
+    display: block;
+  }
+}
 
 .soc-networks__title,
 .signup-form__title {
@@ -1334,8 +1395,6 @@ body {
 
 @media screen and (min-width: 1200px) {
   .signup-form {
-    display: flex;
-    align-items: baseline;
     margin-left: auto;
   }
 }
