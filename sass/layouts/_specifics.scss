@@ -13,23 +13,40 @@
   }
 }
 .specifics-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 .specifics-list__item {
   width: 450px;
+  &:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: var(--card-set-gap);
+    }
+  }
+
   @include tablet {
     width: 354px;
-    width: calc((100% - 30px) / 2);
+    flex-basis: calc(100% / 2 - var(--card-set-gap));
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin: 15px;
+    }
   }
+
   @include desktop {
     width: 270px;
-    width: calc((100% - 90px) / 4);
+    flex-basis: calc(100% / 4 - var(--card-set-gap));
+    & + & {
+      margin-left: var(--card-set-gap);
+    }
   }
-  // & + & {
-  //   margin-left: var(--card-set-gap);
-  // }
+
   &::before {
     content: '';
     height: 120px;
