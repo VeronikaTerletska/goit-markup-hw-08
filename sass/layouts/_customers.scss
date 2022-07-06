@@ -14,6 +14,7 @@
 .customers-list {
   display: flex;
   flex-wrap: wrap;
+  margin: -15px;
 
   @include desktop {
     margin: -15px;
@@ -27,6 +28,7 @@
 
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     flex-basis: calc(100% / 3 - var(--card-set-gap));
+    justify-content: center;
   }
 }
 
@@ -34,7 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
+  width: 210px;
   height: 92px;
   color: var(--icons-color);
   border: 1px solid var(--icons-color);
@@ -47,6 +49,44 @@
   &:focus {
     border-color: var(--accent-color);
     color: var(--accent-color);
+  }
+  @include tablet {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    width: 226px;
+    height: 92px;
+    color: var(--icons-color);
+    border: 1px solid var(--icons-color);
+    border-radius: 4px;
+
+    transition-property: border-color, color;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--timing-function);
+    &:hover,
+    &:focus {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+  }
+  @include desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+    color: var(--icons-color);
+    border: 1px solid var(--icons-color);
+    border-radius: 4px;
+
+    transition-property: border-color, color;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--timing-function);
+    &:hover,
+    &:focus {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
   }
 }
 
