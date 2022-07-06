@@ -1,9 +1,10 @@
 .bottons-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px 8px;
+  margin: -4px;
   margin-bottom: 40px;
 
+  background-color: var(--primary-background-color);
   @include tablet {
     margin-bottom: 30px;
     display: flex;
@@ -14,17 +15,22 @@
     display: flex;
     justify-content: center;
   }
-
-  background-color: var(--primary-background-color);
 }
-.bottons-list__item + .bottons-list__item {
+
+.bottons-list__item {
+  margin: 4px;
   @include tablet {
-    margin-left: 8px;
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
   }
   @include desktop {
-    margin-left: 8px;
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
   }
 }
+
 .bottons-list__filter {
   padding: 6px 22px;
   border-radius: 4px;
