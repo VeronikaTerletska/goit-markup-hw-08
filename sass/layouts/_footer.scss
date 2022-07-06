@@ -16,7 +16,6 @@
   @include desktop {
     display: flex;
     align-items: baseline;
-    text-align: left;
   }
 }
 
@@ -107,6 +106,9 @@
   display: block;
   justify-content: center;
   margin-bottom: 60px;
+  @include desktop {
+    display: block;
+  }
 }
 .soc-networks__title,
 .signup-form__title {
@@ -165,8 +167,6 @@
 
 .signup-form {
   @include desktop {
-    display: flex;
-    align-items: baseline;
     margin-left: auto;
   }
 }
