@@ -296,8 +296,8 @@ input {
 
 .form-deal__icon {
   display: inline-block;
-  width: 15px;
-  height: 16px;
+  min-width: 15px;
+  min-height: 16px;
   border: 1px solid var(--primary-text-color);
   border-radius: 2px;
   margin-right: 9px;
