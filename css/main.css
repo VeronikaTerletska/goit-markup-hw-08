@@ -47,7 +47,7 @@ p {
   margin: 0;
 }
 
-.img {
+img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -62,11 +62,18 @@ body {
 }
 
 .section-title {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
+  font-size: 28px;
+  line-height: 1.18;
   text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  .section-title {
+    margin-bottom: 50px;
+    font-size: 36px;
+    line-height: 1.17;
+  }
 }
 
 .container {
@@ -310,10 +317,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1;
   background-color: var(--primary-background-color);
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   padding-top: 10px;
   padding-bottom: 48px;
 }
@@ -433,13 +440,13 @@ body {
   .hero {
     padding-top: 118px;
     padding-bottom: 118px;
-    width: 480px;
+    max-width: 480px;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
     background-color: var(--hero-background-color);
     text-align: center;
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/mobile/heromob@1x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/mob/heromob@1x.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -447,7 +454,7 @@ body {
 }
 @media screen and (max-width: 767px) and (min-device-pixel-ratio: 2), screen and (max-width: 767px) and (min-resolution: 192dpi), screen and (max-width: 767px) and (min-resolution: 2dppx) {
   .hero {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/mobile/heromob@2x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/mob/heromob@2x.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -641,7 +648,7 @@ body {
 }
 
 .specifics-list__item {
-  width: 450px;
+  width: 100%;
 }
 @media screen and (max-width: 767px) {
   .specifics-list__item:not(:last-child) {
@@ -650,7 +657,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .specifics-list__item {
-    width: 354px;
+    max-width: 354px;
     flex-basis: calc(50% - var(--card-set-gap));
   }
 }
@@ -748,7 +755,7 @@ body {
 
 .work-list__text {
   position: absolute;
-  bottom: 3px;
+  bottom: 0;
   width: 100%;
   height: 70px;
   background-color: rgba(47, 48, 58, 0.8);
@@ -805,16 +812,13 @@ body {
 }
 
 .team-list__item {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  background-color: var(--primary-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 @media screen and (max-width: 480px) {
   .team-list__item {
-    width: 450px;
-    background-color: var(--primary-background-color);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
+    width: 100%;
   }
 }
 @media screen and (max-width: 767px) {
@@ -822,13 +826,15 @@ body {
     margin-bottom: var(--card-set-gap);
   }
 }
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .team-list__item {
+    width: 100%;
+  }
+}
 @media screen and (min-width: 768px) {
   .team-list__item {
     width: 354px;
     flex-basis: calc(50% - var(--card-set-gap));
-    background-color: var(--primary-background-color);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -840,9 +846,6 @@ body {
   .team-list__item {
     width: 270px;
     flex-basis: calc(25% - var(--card-set-gap));
-    background-color: var(--primary-background-color);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
   }
   .team-list__item + .team-list__item {
     margin-left: var(--card-set-gap);
@@ -965,7 +968,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 210px;
+  width: 100%;
   height: 92px;
   color: var(--icons-color);
   border: 1px solid var(--icons-color);
@@ -980,7 +983,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .customers-list__link {
-    width: 226px;
+    max-width: 226px;
     height: 92px;
     color: var(--icons-color);
     border: 1px solid var(--icons-color);
@@ -1119,7 +1122,7 @@ body {
 }
 
 .card-set__item {
-  width: 450px;
+  width: 100%;
 }
 @media screen and (max-width: 767px) {
   .card-set__item:not(:last-child) {
@@ -1148,12 +1151,12 @@ body {
   flex-direction: column;
   height: 100%;
 }
+.card-set__link:hover, .card-set__link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 @media screen and (min-width: 1200px) {
   .card-set__link {
     display: block;
-  }
-  .card-set__link:hover, .card-set__link:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   }
 }
 
@@ -1230,6 +1233,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1241,10 +1245,12 @@ body {
 
 .logo {
   margin-bottom: 60px;
+  justify-content: center;
 }
 @media screen and (min-width: 768px) {
   .logo {
     margin-right: 165px;
+    align-items: center;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1329,6 +1335,7 @@ body {
 .soc-networks {
   display: block;
   justify-content: center;
+  align-items: center;
   margin-bottom: 60px;
 }
 @media screen and (min-width: 1200px) {
@@ -1401,14 +1408,12 @@ body {
 
 .signup {
   display: block;
-  text-align: center;
+  align-items: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .signup {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    text-align: center;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1419,7 +1424,7 @@ body {
 }
 
 .signup__email {
-  min-width: 358px;
+  width: 100%;
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -1441,6 +1446,16 @@ body {
 .signup__email:focus, .signup__email:hover {
   border-color: var(--accent-color);
 }
+@media screen and (min-width: 768px) {
+  .signup__email {
+    min-width: 450px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .signup__email {
+    min-width: 358px;
+  }
+}
 
 .signup__btn {
   align-items: center;
@@ -1461,14 +1476,15 @@ body {
   transition-duration: var(--duration);
   transition-timing-function: var(--timing-function);
 }
-@media screen and (min-width: 1200px) {
-  .signup__btn {
-    display: flex;
-  }
-}
 .signup__btn:focus, .signup__btn:hover {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   background-color: #188ce8;
+}
+@media screen and (min-width: 1200px) {
+  .signup__btn {
+    display: flex;
+    margin-left: 12px;
+  }
 }
 
 .signup__icon {
@@ -1493,8 +1509,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 40px;
-  width: 450px;
-  height: 609px;
+  width: 100%;
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -1507,6 +1522,12 @@ body {
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.5);
   opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 450px;
+    height: 609px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .modal {
@@ -1793,6 +1814,7 @@ input {
 }
 @media screen and (min-width: 1200px) {
   .form-deal__link {
+    font-size: 14px;
     line-height: 1.71;
   }
 }
