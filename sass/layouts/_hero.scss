@@ -2,7 +2,7 @@
   @media screen and (max-width: 767px) {
     padding-top: 118px;
     padding-bottom: 118px;
-    width: 480px;
+    max-width: 480px;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -10,13 +10,13 @@
     background-color: var(--hero-background-color);
     text-align: center;
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url(../images/mobile/heromob@1x.jpg);
+      url(../images/mob/heromob@1x.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     @include retina {
       background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        url(../images/mobile/heromob@2x.jpg);
+        url(../images/mob/heromob@2x.jpg);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
