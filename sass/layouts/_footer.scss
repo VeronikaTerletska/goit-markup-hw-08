@@ -12,6 +12,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
   }
   @include desktop {
     display: flex;
@@ -21,9 +22,11 @@
 
 .logo {
   margin-bottom: 60px;
+  justify-content: center;
 
   @include tablet {
     margin-right: 165px;
+    align-items: center;
   }
 
   @include desktop {
@@ -105,6 +108,7 @@
 .soc-networks {
   display: block;
   justify-content: center;
+  align-items: center;
   margin-bottom: 60px;
   @include desktop {
     display: block;
@@ -172,13 +176,11 @@
 }
 .signup {
   display: block;
-  text-align: center;
+  align-items: center;
 
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     display: flex;
-
     flex-direction: column;
-    align-items: center;
   }
 
   @include desktop {
@@ -187,7 +189,7 @@
   }
 }
 .signup__email {
-  min-width: 358px;
+  width: 100%;
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -211,13 +213,16 @@
   &:hover {
     border-color: var(--accent-color);
   }
+  @include tablet {
+    min-width: 450px;
+  }
+
+  @include desktop {
+    min-width: 358px;
+  }
 }
 
 .signup__btn {
-  @include desktop {
-    display: flex;
-  }
-
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -242,6 +247,10 @@
   &:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     background-color: #188ce8;
+  }
+  @include desktop {
+    display: flex;
+    margin-left: 12px;
   }
 }
 
