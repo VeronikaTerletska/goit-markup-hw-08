@@ -205,10 +205,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1;
   background-color: var(--primary-background-color);
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   padding-top: 10px;
   padding-bottom: 48px;
   .mob-container {
