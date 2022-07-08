@@ -410,6 +410,7 @@ body {
 
 .mob-soc {
   display: flex;
+  flex-wrap: wrap;
   margin-left: 40px;
 }
 
@@ -1236,7 +1237,6 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .footer .container {
-    display: flex;
     align-items: baseline;
     text-align: left;
   }
@@ -1255,6 +1255,7 @@ body {
 @media screen and (min-width: 1200px) {
   .logo {
     margin-right: 70px;
+    margin-bottom: 0px;
   }
 }
 
@@ -1339,7 +1340,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .soc-networks {
-    display: block;
+    margin-bottom: 0px;
   }
 }
 
@@ -1479,6 +1480,11 @@ body {
 .signup__btn:focus, .signup__btn:hover {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   background-color: #188ce8;
+}
+@media screen and (max-width: 767px) {
+  .signup__btn {
+    margin: 0 auto;
+  }
 }
 @media screen and (min-width: 1200px) {
   .signup__btn {
