@@ -13,7 +13,6 @@
     text-align: center;
   }
   @include desktop {
-    display: flex;
     align-items: baseline;
     text-align: left;
   }
@@ -30,6 +29,7 @@
 
   @include desktop {
     margin-right: 70px;
+    margin-bottom: 0px;
   }
 }
 .logo__footer {
@@ -110,7 +110,7 @@
   align-items: center;
   margin-bottom: 60px;
   @include desktop {
-    display: block;
+    margin-bottom: 0px;
   }
 }
 .soc-networks__title,
@@ -247,6 +247,9 @@
   &:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     background-color: #188ce8;
+  }
+  @media screen and (max-width: 767px) {
+    margin: 0 auto;
   }
   @include desktop {
     display: flex;
